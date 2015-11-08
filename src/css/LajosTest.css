@@ -1,0 +1,43 @@
+#header {
+	background-color: #202020;
+}
+
+#header h1, h3 {
+	color: white;
+}
+
+#exit-portal {
+	color: orange;
+}
+
+#log-out {
+	color: orange;
+}
+
+#menu {
+	background-color: gray;
+}
+
+.menu-dropdown {
+	color: orange;
+	background-color: gray;
+    border-color: gray;
+}
+
+.menu-dropdown:hover {
+	color: orange;
+	background-color: gray;
+    border-color: gray;
+}
+
+.menu-dropdown:active {
+	color: orange;
+	background-color: gray;
+    border-color: gray;
+}
+
+.menu-dropdown:focus {
+	color: orange;
+	background-color: gray;
+    border-color: gray;
+}

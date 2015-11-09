@@ -18,6 +18,13 @@
 	background-color: gray;
 }
 
+#invite-members{
+	color: black;
+	font-size: 15pt;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
 .menu-dropdown {
 	color: orange;
 	background-color: gray;
@@ -44,4 +51,8 @@ h4 {
 	color: orange;
 	background-color: gray;
     border-color: gray;
+}
+
+#team-name {
+	resize: none;
 }

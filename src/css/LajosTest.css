@@ -36,6 +36,10 @@
     border-color: gray;
 }
 
+h4 {
+	text-decoration: underline;
+}
+
 .menu-dropdown:focus {
 	color: orange;
 	background-color: gray;

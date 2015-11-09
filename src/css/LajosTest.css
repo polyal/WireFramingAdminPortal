@@ -1,0 +1,58 @@
+#header {
+	background-color: #202020;
+}
+
+#header h1, h3 {
+	color: white;
+}
+
+#exit-portal {
+	color: orange;
+}
+
+#log-out {
+	color: orange;
+}
+
+#menu {
+	background-color: gray;
+}
+
+#invite-members{
+	color: black;
+	font-size: 15pt;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+.menu-dropdown {
+	color: orange;
+	background-color: gray;
+    border-color: gray;
+}
+
+.menu-dropdown:hover {
+	color: orange;
+	background-color: gray;
+    border-color: gray;
+}
+
+.menu-dropdown:active {
+	color: orange;
+	background-color: gray;
+    border-color: gray;
+}
+
+h4 {
+	text-decoration: underline;
+}
+
+.menu-dropdown:focus {
+	color: orange;
+	background-color: gray;
+    border-color: gray;
+}
+
+#team-name {
+	resize: none;
+}

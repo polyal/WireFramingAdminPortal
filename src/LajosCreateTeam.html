@@ -10,7 +10,6 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/LajosTest.css" rel="stylesheet">
-	<script language="javascript" type="text/javascript" src="js/FAQScript.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,44 +74,83 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Frequently Asked Question</h2>
+				<h2>Create a Team</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
-				<h4>This is the First FAQ Question</h4>
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				Team Name:
+			</div>
+			<div class="col-md-4">
+				<textarea rows="1" cols="50" id="team-name"></textarea>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
-				This is the Answer to the First FAQ Question
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				Team Type:
+			</div>
+			<div class="col-md-4">
+				<form id="team-type">
+					<input type="radio" value="Public" name="team-type"> Public</input>
+					<input type="radio" value="Private" name="team-type" checked>Private</input>
+				</form>
 			</div>
 		</div>
+		
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
-				<h4>This is the Second FAQ Question</h4>
+			<div class="col-md-12">
+				<div id="invite-members">Invite Team Members</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				Email:
+			</div>
+			<div class="col-md-4">
+				<textarea rows="1" cols="50" id="team-name"></textarea>
 			</div>
 		</div>
+		
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
-				This is the Answer to the Second FAQ Question
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				Email:
+			</div>
+			<div class="col-md-4">
+				<textarea rows="1" cols="50" id="team-name"></textarea>
 			</div>
 		</div>
+		
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
-				<h4>This is the Third FAQ Question</h4>
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				Email:
+			</div>
+			<div class="col-md-4">
+				<textarea rows="1" cols="50" id="team-name"></textarea>
 			</div>
 		</div>
+		
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
-				This is the Answer to the Third FAQ Question
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				Email:
+			</div>
+			<div class="col-md-4">
+				<textarea rows="1" cols="50" id="team-name"></textarea>
 			</div>
 		</div>
+		
 		<div class="row">
-			<div class="col-md-3 col-md-offset-5">
-				<button id="edit-submit-button" class="btn btn-success btn-md">Edit</button>
+			<div class="col-md-2">
+				<button type="submit"><a href="#">Submit</a></button>
+				<button type="submit"><a href="LajosIndex.html">Cancel</a></button>
 			</div>
 		</div>
 	</div>

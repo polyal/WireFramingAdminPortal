@@ -1,3 +1,5 @@
+var routePoints = []; //A list of two tuples holding the coordinates of a route
+
 window.onload = function () {
 	var canvas = document.getElementById("viewport");
 
@@ -10,15 +12,15 @@ window.onload = function () {
 	base_image.src = 'img/GuelphMap.png';
 	base_image.onload = function() {
 		context.drawImage(base_image, 0, 0, 373, 414);
-	}
+	};
 
 	canvas.addEventListener("click", function(e) {
 		var x;
 		var y;
 		var rect = canvas.getBoundingClientRect();
 
-		x = e.clientX - rect.left,
-		y = e.clientY - rect.top
+		x = e.clientX - rect.left;
+		y = e.clientY - rect.top;
 
 		if(pointOne == null) {
 			pointOne = [x, y];
@@ -40,6 +42,12 @@ window.onload = function () {
 			pointOne[0] = pointTwo[0];
 			pointOne[1] = pointTwo[1];
 		}
+
+		routePoints.push( (x, y) );
+	});
+
+	document.getElementById("clear-route").addEventListener("click", function() {
+		routePoints = [];
 	});
 
 	document.getElementById("submit-button").addEventListener("click", function() {
@@ -117,4 +125,5 @@ window.onload = function () {
 			numParticipants.value = numParticipants.value.slice(0, -1);
 		}
 	});
-}
+};
+

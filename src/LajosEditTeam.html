@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/LajosTest.css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="js/EditTeamScript.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,6 +84,11 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-3 col-md-offset-3">
+				<label id="error-message"></label>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-2">
 				Team Name:
@@ -114,11 +120,11 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name">lorant@gmail.com</textarea>
+				<textarea rows="1" cols="50" id="email-textbox">Lorant@gmail.com</textarea>
 			</div>
 			<div class="col-md-4">
 				<form id="team-type">
-					<input type="checkbox" value="Public" name="team-type"> Remove?</input>
+					<button class="delete-button">Remove?</button>
 				</form>
 			</div>
 		</div>
@@ -128,11 +134,11 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name">Lajos@gmail.com</textarea>
+				<textarea rows="1" cols="50" id="email-textbox">Lajos@gmail.com</textarea>
 			</div>
 			<div class="col-md-4">
 				<form id="team-type">
-					<input type="checkbox" value="Public" name="team-type"> Remove?</input>
+					<button class="delete-button">Remove?</button>
 				</form>
 			</div>
 		</div>
@@ -142,11 +148,11 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name">Christian@gmail.com</textarea>
+				<textarea rows="1" cols="50" id="email-textbox">Christian@gmail.com</textarea>
 			</div>
 			<div class="col-md-4">
 				<form id="team-type">
-					<input type="checkbox" value="Public" name="team-type"> Remove?</input>
+					<button class="delete-button">Remove?</button>
 				</form>
 			</div>
 		</div>
@@ -156,11 +162,11 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name">Nigel@gmail.com</textarea>
+				<textarea rows="1" cols="50" id="email-textbox">Nigel@gmail.com</textarea>
 			</div>
 			<div class="col-md-4">
 				<form id="team-type">
-					<input type="checkbox" value="Public" name="team-type"> Remove?</input>
+					<button class="delete-button">Remove?</button>
 				</form>
 			</div>
 		</div>
@@ -176,7 +182,7 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+				<textarea rows="1" cols="50" id="email-textbox"></textarea>
 			</div>
 		</div>
 
@@ -186,7 +192,7 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+				<textarea rows="1" cols="50" id="email-textbox"></textarea>
 			</div>
 		</div>
 
@@ -196,7 +202,7 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+				<textarea rows="1" cols="50" id="email-textbox"></textarea>
 			</div>
 		</div>
 
@@ -206,7 +212,7 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+				<textarea rows="1" cols="50" id="email-textbox"></textarea>
 			</div>
 		</div>
 
@@ -222,14 +228,14 @@
 				Search:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+				<textarea rows="1" cols="50" id="email-textbox"></textarea>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-2">
-				<button type="submit"><a href="#">Submit</a></button>
-				<button type="submit"><a href="LajosIndex.html">Cancel</a></button>
+				<button class="btn btn-warning" id="submit-button">Submit</button>
+				<button class="btn btn-warning" id="cancel-button"><a href="LajosIndex.html">Cancel</a></button>
 			</div>
 		</div>
 	</div>

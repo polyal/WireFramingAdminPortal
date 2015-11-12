@@ -74,9 +74,15 @@ window.onload = function () {
 		}
 
 		var oneChecked = false;
+		var onlyAccessibility = false;
 		for(var i = 0; i < checkboxes.length; i++) {
+			console.log(checkboxes[i]);
 			if(checkboxes[i].checked) {
-				oneChecked = true;
+				if(checkboxes[i].value == "Accessibility") {
+					onlyAccessibility = true;
+				} else {
+					oneChecked = true;
+				}
 			}
 		}
 
@@ -89,8 +95,26 @@ window.onload = function () {
 			forgotChecked.innerHTML = "";
 		}
 
+		var accessibilityError = document.getElementById("only-accessibility");
+		if(onlyAccessibility && !oneChecked) {
+			accessibilityError.classList.add("bg-danger");
+			accessibilityError.innerHTML = "Must Select Another Type Other Than Accessibility";
+		} else {
+			accessibilityError.classList.remove("bg-danger");
+			accessibilityError.innerHTML = "";
+		}
+
 		if(document.getElementsByClassName("bg-danger").length == 0) {
 			window.location.replace("LajosIndex.html");
+		}
+
+		var noWaypoints = document.getElementById("no-waypoints");
+		if(pointOne == null || pointTwo == null) {
+			noWaypoints.classList.add("bg-danger");
+			noWaypoints.innerHTML = "Please Create at Least Two Waypoints";
+		} else {
+			noWaypoints.classList.remove("bg-danger");
+			noWaypoints.innerHTML = "";
 		}
 	});
 

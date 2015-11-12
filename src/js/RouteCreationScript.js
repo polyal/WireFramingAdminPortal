@@ -1,10 +1,12 @@
-var routePoints = []; //A list of two tuples holding the coordinates of a route
+var routePoints = []; //A list of two elment arrays holding the coordinates of a route
 
 window.onload = function () {
 	var canvas = document.getElementById("viewport");
 
 	var pointOne = null;
 	var pointTwo = null;
+
+
 
 	context = canvas.getContext('2d');
 
@@ -13,6 +15,8 @@ window.onload = function () {
 	base_image.onload = function() {
 		context.drawImage(base_image, 0, 0, 373, 414);
 	};
+
+	context.beginPath();
 
 	canvas.addEventListener("click", function(e) {
 		var x;
@@ -43,11 +47,23 @@ window.onload = function () {
 			pointOne[1] = pointTwo[1];
 		}
 
-		routePoints.push( (x, y) );
+		routePoints.push( [x, y] );
 	});
 
 	document.getElementById("clear-route").addEventListener("click", function() {
+		alert(routePoints.length);
 		routePoints = [];
+		context.drawImage(base_image, 0, 0, 373, 414);
+		pointOne = null;
+		pointTwo = null;
+		context.beginPath();
+	});
+
+	document.getElementById("complete-route").addEventListener("click", function() {
+		if (routePoints.length > 2) {
+			context.lineTo(routePoints[0][0], routePoints[0][1]);
+			context.stroke();
+		}
 	});
 
 	document.getElementById("submit-button").addEventListener("click", function() {

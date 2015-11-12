@@ -51,7 +51,6 @@ window.onload = function () {
 	});
 
 	document.getElementById("clear-route").addEventListener("click", function() {
-		alert(routePoints.length);
 		routePoints = [];
 		context.drawImage(base_image, 0, 0, 373, 414);
 		pointOne = null;
@@ -63,6 +62,7 @@ window.onload = function () {
 		if (routePoints.length > 2) {
 			context.lineTo(routePoints[0][0], routePoints[0][1]);
 			context.stroke();
+			routePoints.push(routePoints[0]);
 		}
 	});
 

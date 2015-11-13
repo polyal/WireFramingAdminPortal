@@ -1,12 +1,11 @@
 var routePoints = []; //A list of two elment arrays holding the coordinates of a route
 
 window.onload = function () {
+
 	var canvas = document.getElementById("viewport");
 
 	var pointOne = null;
 	var pointTwo = null;
-
-
 
 	context = canvas.getContext('2d');
 

@@ -1,5 +1,5 @@
 #header {
-	background-color: #222222;
+	background-color: #202020;
 }
 
 #header h1, h3 {
@@ -51,6 +51,18 @@ h4 {
 	color: #FDA103;
 	background-color: #323232;
     border-color: #323232;
+}
+
+#header-link a:link{
+	color: #FDA103;
+}
+
+#header-link a:visited{
+	color: #FDA103;
+}
+
+#header-link a:hover{
+	color: #FDA103;
 }
 
 #team-name {

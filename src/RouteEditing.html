@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Edit Routes</title>
+    <title>Trick or Eat - Administrator Portal</title>
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/LajosTest.css" rel="stylesheet">
-	<script language="javascript" type="text/javascript" src="js/RouteSelectionScript.js"></script>
+	<script language="javascript" type="text/javascript" src="js/RouteEditingScript.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,61 +26,60 @@
   <body>
 
 	<div class="container">
-		<div id="header">
+<div id="header">
 			<div class="row">
-				<div class="col-md-2">
-					<img src="img/logo.png" height="120" width="120">
+				<div class="col-md-2" style="text-align:center">
+					<a href="Index.html"><img src="img/logo.png" height="70%" width="70%"></a>
 				</div>
 				<div class="col-md-6">
 					<h1> Administrator Portal </h1>
 				</div>
-				<div class="col-md-4">
-					<h3>Logged in as</h3>
-					<h3>USERNAME</h3>
+				<div class="col-md-4" style="text-align:right">
+					<h3 style="margin-right:10px">Logged in as<br>USERNAME</h3>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-8"></div>
-				<div class="col-md-1" id="exit-portal">Exit Portal</div>
-				<div class="col-md-1" id="log-out">Log Out</div>
+				<div class="col-md-10"></div>
+				<div class="col-md-1" id="header-link"><a href="404.html">Exit Portal</a></div>
+				<div class="col-md-1" id="header-link"><a href="login.html">Log Out</a></div>
 			</div>
 		</div>
-
 
 		<div id="menu">
 			<div class="row">
 				<div class="col-md-1">
 					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Routes
+						<div style="font-size:20px">Routes</div>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="LajosRouteCreation.html">Add Routes</a></li>
-						<li>Edit Routes</li>
-						<li><a href="LajosRouteSelection.html">Delete Routes</a></li>
+						<li><a href="RouteCreation.html">Add Routes</a></li>
+						<li><a href="RouteEditing.html">Edit Routes</a></li>
+						<li><a href="RouteSelection.html">Delete Routes</a></li>
 					</ul>
 				</div>
 				<div class="col-md-1">
 					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Teams
+						<div style="font-size:20px">Teams</div>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="LajosCreateTeam.html">Create Team</a></li>
-						<li><a href="LajosEditTeam.html">Edit Team</a></li>
-						<li><a href="LajosDeleteTeam.html">Delete Team</a></li>
+						<li><a href="CreateTeam.html">Create Team</a></li>
+						<li><a href="EditTeam.html">Edit Team</a></li>
+						<li><a href="DeleteTeam.html">Delete Team</a></li>
 					</ul>
 				</div>
 				<div class="col-md-1">
 					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Pages
+						<div style="font-size:20px">Pages</div>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="LajosFAQ.html">FAQ</a></li>
-						<li><a href="LajosAgency.html">Agency List</a></li>
+						<li><a href="FAQ.html">FAQ</a></li>
+						<li><a href="Agency.html">Agency List</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
+		
 		<div class="row">
 			<div class="col-md-4">
 				<h2>Route Selection</h2>
@@ -104,13 +107,21 @@
 						<p class="bg-warning routes" id="RouteFour">Route 4</p>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-md-12">
+						Coordinates
+						<ol id="route-coordinates">No Coordinates Available</ol>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-7">
 				<div class="row">
 					<div class="col-md-12">
-						<img src="img/GuelphMap.png" id="map_image">  <!--Map Image-->
+						<canvas id="viewport" width="373" height="414"></canvas>
 					</div>
 				</div>
+				<button id="clear-route" class="btn btn-warning">Clear</button>
+				<button id="complete-route" class="btn btn-warning">Complete Route</button>
 			</div>
 		</div>
 	</div>

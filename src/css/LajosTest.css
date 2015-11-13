@@ -7,15 +7,15 @@
 }
 
 #exit-portal {
-	color: orange;
+	color: #FDA103;
 }
 
 #log-out {
-	color: orange;
+	color: #FDA103;
 }
 
 #menu {
-	background-color: gray;
+	background-color: #323232;
 }
 
 #invite-members{
@@ -26,21 +26,21 @@
 }
 
 .menu-dropdown {
-	color: orange;
-	background-color: gray;
-    border-color: gray;
+	color: #FDA103;
+	background-color: #323232;
+    border-color: #323232;
 }
 
 .menu-dropdown:hover {
-	color: orange;
-	background-color: gray;
-    border-color: gray;
+	color: #FDA103;
+	background-color: #323232;
+    border-color: #323232;
 }
 
 .menu-dropdown:active {
-	color: orange;
-	background-color: gray;
-    border-color: gray;
+	color: #FDA103;
+	background-color: #323232;
+    border-color: #323232;
 }
 
 h4 {
@@ -48,12 +48,16 @@ h4 {
 }
 
 .menu-dropdown:focus {
-	color: orange;
-	background-color: gray;
-    border-color: gray;
+	color: #FDA103;
+	background-color: #323232;
+    border-color: #323232;
 }
 
 #team-name {
+	resize: none;
+}
+
+#email-textbox{
 	resize: none;
 }
 

@@ -6,19 +6,19 @@ window.onload = function () {
 		console.log(routes[i].innerHTML);
 		if(routes[i].innerHTML == "Route 1") {
 			routes[i].addEventListener("click", function() {
-				document.getElementById("map_image").src = "img/GuelphMapRoute1.png";
+				document.getElementById("map_image").src = "img/GuelphMap.png";
 			});
 		} else if(routes[i].innerHTML == "Route 2") {
 			routes[i].addEventListener("click", function() {
-				document.getElementById("map_image").src = "img/GuelphMapRoute2.png";
+				document.getElementById("map_image").src = "img/GuelphMap.png";
 			});
 		} else if(routes[i].innerHTML == "Route 3") {
 			routes[i].addEventListener("click", function() {
-				document.getElementById("map_image").src = "img/GuelphMapRoute3.png";
+				document.getElementById("map_image").src = "img/GuelphMap.png";
 			});
 		} else if(routes[i].innerHTML == "Route 4") {
 			routes[i].addEventListener("click", function() {
-				document.getElementById("map_image").src = "img/GuelphMapRoute4.png";
+				document.getElementById("map_image").src = "img/GuelphMap.png";
 			});
 		}
 	}

@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Trick or Eat - Administrator Portal</title>
 
+	<!--Favicon-->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">	
+	
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/LajosCreateTeam.css" rel="stylesheet">
-	<script language="javascript" type="text/javascript" src="js/CreateTeamScript.js"></script>
+	<link href="css/LajosTest.css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="js/FAQScript.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,145 +24,98 @@
     <![endif]-->
   </head>
   <body>
-
 	<div class="container">
 		<div id="header">
 			<div class="row">
-				<div class="col-md-2">
-					<img src="img/logo.png" height="120" width="120">
+				<div class="col-md-2" style="text-align:center">
+					<a href="Index.html"><img src="img/logo.png" height="70%" width="70%"></a>
 				</div>
 				<div class="col-md-6">
 					<h1> Administrator Portal </h1>
 				</div>
-				<div class="col-md-4">
-					<h3>Logged in as</h3>
-					<h3>USERNAME</h3>
+				<div class="col-md-4" style="text-align:right">
+					<h3 style="margin-right:10px">Logged in as<br>USERNAME</h3>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-8"></div>
+				<div class="col-md-10"></div>
 				<div class="col-md-1" id="exit-portal">Exit Portal</div>
 				<div class="col-md-1" id="log-out">Log Out</div>
 			</div>
 		</div>
 
-
 		<div id="menu">
 			<div class="row">
 				<div class="col-md-1">
 					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Routes
+						<div style="font-size:20px">Routes</div>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="LajosRouteCreation.html">Add Routes</a></li>
-						<li><a href="LajosRouteSelection.html">Edit Routes</a></li>
-						<li><a href="LajosRouteSelection.html">Delete Routes</a></li>
+						<li><a href="RouteCreation.html">Add Routes</a></li>
+						<li><a href="RouteEditing.html">Edit Routes</a></li>
+						<li><a href="RouteSelection.html">Delete Routes</a></li>
 					</ul>
 				</div>
 				<div class="col-md-1">
 					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Teams
+						<div style="font-size:20px">Teams</div>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="LajosCreateTeam.html">Create Team</a></li>
-						<li><a href="LajosEditTeam.html">Edit Team</a></li>
-						<li><a href="404.html">Delete Team</a></li>
+						<li><a href="CreateTeam.html">Create Team</a></li>
+						<li><a href="EditTeam.html">Edit Team</a></li>
+						<li><a href="DeleteTeam.html">Delete Team</a></li>
 					</ul>
 				</div>
 				<div class="col-md-1">
 					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Pages
+						<div style="font-size:20px">Pages</div>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="LajosFAQ.html">FAQ</a></li>
-						<li><a href="LajosAgency.html">Agency List</a></li>
+						<li><a href="FAQ.html">FAQ</a></li>
+						<li><a href="Agency.html">Agency List</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Create a Team</h2>
+				<h2>Agency Information</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Team Name:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+			<div class="col-md-12 toggle-edit" contenteditable="false">
+				<h4>Agency 1</h4>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Team Type:
-			</div>
-			<div class="col-md-4">
-				<form id="team-type">
-					<input type="radio" value="Public" name="team-type"> Public</input>
-					<input type="radio" value="Private" name="team-type" checked>Private</input>
-				</form>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-12">
-				<div id="invite-members">Invite Team Members</div>
+			<div class="col-md-12 toggle-edit" contenteditable="false">
+				Info About Agency 1.
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+			<div class="col-md-12 toggle-edit" contenteditable="false">
+				<h4>Agency 2</h4>
 			</div>
 		</div>
-
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+			<div class="col-md-12 toggle-edit" contenteditable="false">
+				Info About Agency 2
 			</div>
 		</div>
-
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+			<div class="col-md-12 toggle-edit" contenteditable="false">
+				<h4>Agency 3</h4>
 			</div>
 		</div>
-
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name"></textarea>
+			<div class="col-md-12 toggle-edit" contenteditable="false">
+				Info About Agency 3
 			</div>
 		</div>
-
 		<div class="row">
-			<div class="col-md-3 col-md-offset-3">
-				<label id="error-message"></label>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-2">
-				<button type="submit" class="btn btn-warning"><a id="submit-button-href" href="#">Submit</a></button>
-				<button type="submit" class="btn btn-warning"><a id="cancel-button-href" href="LajosIndex.html">Cancel</a></button>
+			<div class="col-md-3 col-md-offset-5">
+				<button id="edit-submit-button" class="btn btn-success btn-md">Edit</button>
 			</div>
 		</div>
 	</div>

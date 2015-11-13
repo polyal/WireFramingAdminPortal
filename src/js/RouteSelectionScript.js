@@ -21,7 +21,7 @@ window.onload = function () {
 			});
 		}
 	}
-	
+
 	var deleteButtons = document.getElementsByClassName("delete-button");
 
 	for (var i = 0; i < deleteButtons.length; i++) {
@@ -32,4 +32,4 @@ window.onload = function () {
 			document.getElementById("map_image").src = "img/GuelphMap.png"
 		});
 	};
-}
+};

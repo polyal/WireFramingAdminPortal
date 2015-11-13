@@ -53,6 +53,18 @@ h4 {
     border-color: #323232;
 }
 
+#header-link a:link{
+	color: #FDA103;
+}
+
+#header-link a:visited{
+	color: #FDA103;
+}
+
+#header-link a:hover{
+	color: #FDA103;
+}
+
 #team-name {
 	resize: none;
 }

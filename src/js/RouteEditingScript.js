@@ -138,14 +138,19 @@ window.onload = function () {
 			pointOne = null;
 			pointTwo = null;
 			context.beginPath();
+			populateCoordinateHTMLList();
 		});
 
 	document.getElementById("complete-route").addEventListener("click", function() {
-		if (routePoints.length > 2) {
-			context.lineTo(routePoints[0][0], routePoints[0][1]);
-			context.stroke();
-			routePoints.push(routePoints[0]);
+		var len = routePoints.length;
+		if (len > 2) {
+			if (routePoints[0][0] != routePoints[len - 1][0] || routePoints[0][1] != routePoints[len - 1][1]) {
+				context.lineTo(routePoints[0][0], routePoints[0][1]);
+				context.stroke();
+				routePoints.push(routePoints[0]);
+			}
 		}
+		populateCoordinateHTMLList();
 	});
 
 };

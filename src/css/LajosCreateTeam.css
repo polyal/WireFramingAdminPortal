@@ -57,6 +57,10 @@ h4 {
 	resize: none;
 }
 
+.teammember-email {
+	resize: none;
+}
+
 #submit-button-href, #cancel-button-href {
 	color: inherit;
 }

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Edit Routes</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/LajosTest.css" rel="stylesheet">
-	<script language="javascript" type="text/javascript" src="js/RouteCreationScript.js"></script>
+	<script language="javascript" type="text/javascript" src="js/RouteSelectionScript.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,8 +51,8 @@
 						Routes
 					</button>
 					<ul class="dropdown-menu">
-						<li>Add Routes</li>
-						<li><a href="LajosRouteEditing.html">Edit Routes</a></li>
+						<li><a href="LajosRouteCreation.html">Add Routes</a></li>
+						<li>Edit Routes</li>
 						<li><a href="LajosRouteSelection.html">Delete Routes</a></li>
 					</ul>
 				</div>
@@ -79,86 +79,38 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4">
-				<h2>Route Creation</h2>
+				<h2>Route Selection</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-5">
 				<div class="row">
-					<div class="col-md-3">
-						Route Name:
-					</div>
-					<div class="col-md-7">
-						<textarea rows="1" cols="45" id="route-name"></textarea>
+					<div class="col-md-12">
+						<p class="bg-info routes" id="RouteOne">Route 1</p>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-5 col-md-offset-3" id="forgot-name"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-3">
-						Route Type:
-					</div>
-					<div class="col-mod-1">
-						<input type="checkbox" name="RouteType" value="Walking">Walking Route</input>
+					<div class="col-md-12">
+						<p class="bg-warning routes" id="RouteTwo">Route 2</p>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-mod-1 col-md-offset-3">
-						<input type="checkbox" name="RouteType" value="Bus">Bus Route</input>
+					<div class="col-md-12">
+						<p class="bg-info routes" id="RouteThree">Route 3</p>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-mod-1 col-md-offset-3">
-						<input type="checkbox" name="RouteType" value="Driving">Driving Route</input>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-mod-1 col-md-offset-3">
-						<input type="checkbox" name="RouteType" value="Accessibility">Accessibility Route</input>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-3 "></div>
-					<div class="col-mod-1" id="forgot-checkbox"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-3 "></div>
-					<div class="col-mod-1" id="only-accessibility"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						Max Number of Participants:
-					</div>
-					<div class="col-md-2">
-						<textarea rows="1" cols="27" id="num-participants"></textarea>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-offset-2 col-md-8" id="forgot-participant"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-md-offset-4">
-						<button id="submit-button" class="btn btn-warning">Submit</button>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-offset-2 col-md-8" id="no-waypoints"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-7 col-md-offset-3">
-						<div class="bg-success">Click on Map To Create Waypoints</div>
+					<div class="col-md-12">
+						<p class="bg-warning routes" id="RouteFour">Route 4</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-7">
 				<div class="row">
 					<div class="col-md-12">
-						<canvas id="viewport" width="373" height="414"></canvas>
+						<img src="img/GuelphMap.png" id="map_image">  <!--Map Image-->
 					</div>
 				</div>
-				<button id="clear-route" class="btn btn-warning">Clear</button>
-				<button id="complete-route" class="btn btn-warning">Complete Route</button>
 			</div>
 		</div>
 	</div>

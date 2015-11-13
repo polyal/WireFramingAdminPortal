@@ -15,13 +15,12 @@ window.onload = function () {
 	});
 
 	var deleteButtons = document.getElementsByClassName("delete-button");
-	console.log("fbdajbj");
+
 	for (var i = 0; i < deleteButtons.length; i++) {
 		console.log(deleteButtons[i]);
 		deleteButtons[i].addEventListener("click", function(e){
 			e.preventDefault();
 			this.parentNode.parentNode.parentNode.remove();
-			console.log("stuffs");
 		});
 	};
 };

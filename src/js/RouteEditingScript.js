@@ -140,6 +140,10 @@ function populateCoordinateHTMLList	() {
 	var li;
 	var deleteButton;
 	var span;
+	var stringArray;
+	var newX;
+	var newY;
+
 
 	$('ol').empty();
 
@@ -155,9 +159,26 @@ function populateCoordinateHTMLList	() {
 				this.contentEditable = true;
 			});
 
-			span.addEventListener("onblur", function (index) {
+			span.addEventListener("blur", function(index) {
 				return function () {
-					alert(index);
+					stringArray = this.innerHTML.split(",");
+					if (stringArray.length != 2) {
+						alert("Ensure there is only one comma in the coordinates textbox.");
+					} else {
+						newX = parseFloat(stringArray[0].replace(/[^\d.-]/g, ''));
+
+						newY = parseFloat(stringArray[1].replace(/[^\d.-]/g, ''));
+						if (isNaN(newX)|| isNaN(newY)) {
+							alert("Failed to parse properly, ensure there is only one comma in the coordinates textbox.");
+							this.innerHTML = "x = " + routePoints[index][0] + ", y = " + routePoints[index][1];
+						} else {
+							routePoints[index][0] = newX;
+							routePoints[index][1] = newY;
+							drawRoute();
+						}
+
+					}
+
 				};
 			}(i));
 

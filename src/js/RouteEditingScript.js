@@ -16,17 +16,7 @@ window.onload = function () {
 				context.drawImage(base_image, 0, 0, 373, 414);
 				pointOne = null;
 				pointTwo = null;
-				context.beginPath();
-
-				context.strokeStyle = '#0000FF';
-				context.lineWidth = 3;
-
-				context.moveTo(routePoints[0][0], routePoints[0][1]);
-				for (var i = 1; i < routePoints.length; i++) {
-					context.lineTo(routePoints[i][0], routePoints[i][1]);
-				}
-
-				context.stroke();
+				drawRoute();
 				populateCoordinateHTMLList();
 
 			});
@@ -37,15 +27,7 @@ window.onload = function () {
 				context.drawImage(base_image, 0, 0, 373, 414);
 				pointOne = null;
 				pointTwo = null;
-				context.beginPath();
-
-				context.strokeStyle = '#0000FF';
-				context.lineWidth = 3;
-				context.moveTo(342.5,252);
-				for (var i = 1; i < routePoints.length; i++) {
-					context.lineTo(routePoints[i][0], routePoints[i][1]);
-				}
-				context.stroke();
+				drawRoute();
 				populateCoordinateHTMLList();
 
 			});
@@ -56,16 +38,7 @@ window.onload = function () {
 				context.drawImage(base_image, 0, 0, 373, 414);
 				pointOne = null;
 				pointTwo = null;
-				context.beginPath();
-
-
-				context.strokeStyle = '#0000FF';
-				context.lineWidth = 3;
-				context.moveTo(routePoints[0][0], routePoints[0][1]);
-				for (var i = 1; i < routePoints.length; i++) {
-					context.lineTo(routePoints[i][0], routePoints[i][1]);
-				}
-				context.stroke();
+				drawRoute();
 				populateCoordinateHTMLList();
 
 			});
@@ -76,16 +49,7 @@ window.onload = function () {
 				context.drawImage(base_image, 0, 0, 373, 414);
 				pointOne = null;
 				pointTwo = null;
-				context.beginPath();
-
-
-				context.strokeStyle = '#0000FF';
-				context.lineWidth = 3;
-				context.moveTo(60.5,78);
-				for (var i = 1; i < routePoints.length; i++) {
-					context.lineTo(routePoints[i][0], routePoints[i][1]);
-				}
-				context.stroke();
+				drawRoute();
 				populateCoordinateHTMLList();
 			});
 		}
@@ -155,9 +119,27 @@ window.onload = function () {
 
 };
 
+function drawRoute() {
+	var len = routePoints.length;
+	context.drawImage(base_image, 0, 0, 373, 414);
+
+	if (len > 0) {
+		context.beginPath();
+		context.strokeStyle = '#0000FF';
+		context.lineWidth = 3;
+		context.moveTo(routePoints[0][0], routePoints[0][1]);
+		for (var i = 1; i < len; i++) {
+			context.lineTo(routePoints[i][0], routePoints[i][1]);
+		}
+		context.stroke();
+	}
+}
+
 function populateCoordinateHTMLList	() {
 	var ol = document.getElementById("route-coordinates");
 	var li;
+	var deleteButton;
+	var span;
 
 	$('ol').empty();
 
@@ -166,8 +148,34 @@ function populateCoordinateHTMLList	() {
 	} else {
 		for(var i = 0; i < routePoints.length; i++) {
 			li = document.createElement("li");
-			li.innerHTML = "x = " + routePoints[i][0] + ", y = " + routePoints[i][1];
+
+			span = document.createElement("span");
+			span.innerHTML = "x = " + routePoints[i][0] + ", y = " + routePoints[i][1];
+			span.addEventListener("click", function () {
+				this.contentEditable = true;
+			});
+
+			span.addEventListener("onblur", function (index) {
+				return function () {
+					alert(index);
+				};
+			}(i));
+
+			deleteButton = document.createElement("button");
+			deleteButton.innerHTML = "X";
+
+			deleteButton.addEventListener("click", function(index) {
+				return function () {
+					routePoints.splice(index, 1);
+					drawRoute();
+					populateCoordinateHTMLList();
+				};
+			}(i));
+
+			li.appendChild(span);
+			li.appendChild(deleteButton);
 			ol.appendChild(li);
+
 		}
 	}
 

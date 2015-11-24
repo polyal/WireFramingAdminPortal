@@ -120,7 +120,7 @@ window.onload = function () {
 		}
 
 		if(document.getElementsByClassName("bg-danger").length == 0) {
-			window.location.replace("LajosIndex.html");
+			window.location.replace("index.html");
 		}
 
 		var noWaypoints = document.getElementById("no-waypoints");

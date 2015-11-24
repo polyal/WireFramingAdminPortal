@@ -1,7 +1,7 @@
 
 window.onload = function(){
 	document.getElementById("delete-button").addEventListener("click", function(){
-	
+
 		var checkboxes = document.getElementsByName("team-names");
 		var boxesChecked = [];
 
@@ -16,4 +16,4 @@ window.onload = function(){
 			boxesChecked[i].parentNode.parentNode.remove();
 		}
 	});
-}
+};

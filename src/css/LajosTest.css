@@ -53,11 +53,27 @@ h4 {
     border-color: #323232;
 }
 
+#header-link a:link {
+	color: #FDA103;
+}
+
+#header-link a:visited {
+	color: #FDA103;
+}
+
+#header-link a:hover {
+	color: #FDA103;
+}
+
 #team-name {
 	resize: none;
 }
 
-#email-textbox{
+#email-textbox {
+	resize: none;
+}
+
+.email-textbox {
 	resize: none;
 }
 
@@ -67,4 +83,12 @@ h4 {
 
 #num-participants {
 	resize: none;
+}
+
+#cancel-button {
+	color: inherit;
+}
+
+.disabled {
+	background-color: gray;
 }

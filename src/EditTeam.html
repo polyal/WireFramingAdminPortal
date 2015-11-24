@@ -29,7 +29,7 @@
 		<div id="header">
 			<div class="row">
 				<div class="col-md-2" style="text-align:center">
-					<a href="Index.html"><img src="img/logo.png" height="70%" width="70%"></a>
+					<a href="index.html"><img src="img/logo.png" height="70%" width="70%"></a>
 				</div>
 				<div class="col-md-6">
 					<h1> Administrator Portal </h1>
@@ -41,8 +41,8 @@
 
 			<div class="row">
 				<div class="col-md-10"></div>
-				<div class="col-md-1" id="exit-portal">Exit Portal</div>
-				<div class="col-md-1" id="log-out">Log Out</div>
+				<div class="col-md-1" id="header-link"><a href="404.html">Exit Portal</a></div>
+				<div class="col-md-1" id="header-link"><a href="login.html">Log Out</a></div>
 			</div>
 		</div>
 
@@ -86,6 +86,31 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="bg-info teams" id="TeamOne">Food Fighters</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="bg-warning teams" id="TeamTwo">United Food Security</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="bg-info teams" id="TeamThree">FoodFTW</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="bg-warning teams" id="TeamFour">Thunder Cats</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<label id="error-message"></label>
 			</div>
@@ -122,7 +147,7 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox">Lorant@gmail.com</textarea>
+				<textarea rows="1" cols="50" class="email-textbox" id="email-textbox1">Lorant@gmail.com</textarea>
 			</div>
 			<div class="col-md-4">
 				<form id="team-type">
@@ -136,7 +161,7 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox">Lajos@gmail.com</textarea>
+				<textarea rows="1" cols="50" class="email-textbox" id="email-textbox2">Lajos@gmail.com</textarea>
 			</div>
 			<div class="col-md-4">
 				<form id="team-type">
@@ -150,7 +175,7 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox">Christian@gmail.com</textarea>
+				<textarea rows="1" cols="50" class="email-textbox" id="email-textbox3">Christian@gmail.com</textarea>
 			</div>
 			<div class="col-md-4">
 				<form id="team-type">
@@ -164,7 +189,7 @@
 				Email:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox">Nigel@gmail.com</textarea>
+				<textarea rows="1" cols="50" class="email-textbox" id="email-textbox4">Nigel@gmail.com</textarea>
 			</div>
 			<div class="col-md-4">
 				<form id="team-type">
@@ -230,14 +255,17 @@
 				Search:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox"></textarea>
+				<textarea rows="1" cols="50" id="email-textbox" class="disabled" disabled="true"></textarea>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-warning disabled" >Search</button>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-2">
 				<button class="btn btn-warning" id="submit-button">Submit</button>
-				<button class="btn btn-warning" id="cancel-button"><a href="LajosIndex.html">Cancel</a></button>
+				<button class="btn btn-warning"><a id="cancel-button" href="LajosIndex.html">Cancel</a></button>
 			</div>
 		</div>
 	</div>

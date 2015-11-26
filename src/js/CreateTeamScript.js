@@ -4,10 +4,8 @@ var participantTable;
 
 window.onload = function () {
 	document.getElementById("submit-button-href").parentNode.addEventListener("click", function() {
+
 		var nameTextBox = document.getElementById("team-name");
-		var captainEmailBox = document.getElementById("captain-email");
-		var captainEmailBox = document.getElementById("captain-email");
-		var captainEmailBox = document.getElementById("captain-email");
 		var captainEmailBox = document.getElementById("captain-email");
 
 		var errorLabel = document.getElementById("team-name-error-message");
@@ -47,8 +45,6 @@ window.onload = function () {
 		} else {
 			radioChecked = 1;
 		}
-
-		
 
 		//get participant table
 		var captainID;
@@ -104,57 +100,67 @@ window.onload = function () {
 			  	xhrFields: {
 					withCredentials: true
 			  	}
-			});
+			}).then(function(){
 
-			//get team table
-			var teamTable;
-			var teamID;
-			$.ajax ({
-				type : 'GET',
-				url : 'http://131.104.49.63/api/team/',
-				dataType : 'json',
+				//get team table
+				var teamTable;
+				var teamID;
+				$.ajax ({
+					type : 'GET',
+					url : 'http://131.104.49.63/api/team/',
+					dataType : 'json',
 
-				xhrFields: {
-					withCredentials: true
-			  	},
+					xhrFields: {
+						withCredentials: true
+				  	},
 
-				error : function(a, b, c){
-					console.log("Failed");
-				  	console.log(a);
-				  	console.log(b);
-				  	console.log(c);
-			  	},
+					error : function(a, b, c){
+						console.log("Failed");
+					  	console.log(a);
+					  	console.log(b);
+					  	console.log(c);
+				  	},
 
-			  	success : function(data){
-		  			teamTable = data;
-		  			console.log(teamTable);
-			  	}
-			}).then(function() {
+				  	success : function(data){
+			  			teamTable = data;
+			  			console.log(teamTable);
+				  	}
+				}).then(function() {
 
-				// .then is here because we cannot call this function until the ajax
-				// call has returned with the data
+					// .then is here because we cannot call this function until the ajax
+					// call has returned with the data
 
-				for (var i = 0; i < teamTable.length; i++){
-					if (teamTable[i].capId == captainID){
-						teamID = teamTable[i].id;
-					}
-				}
-
-				var emails = document.getElementsByClassName("teammember-email");
-				console.log(emails);
-				for (var i = 0; i < participantTable.length; i++) {
-
-					if (participantTable[i].id == captainID){
-						participantTable[i].type = 2;
-					} else {
-						for(var j = 0; j < emails.length; j++) {
-							if(emails[j].value == participantTable[i].email) {
-								participantTable[i].teamId = teamID;
-							}
+					for (var i = 0; i < teamTable.length; i++){
+						if (teamTable[i].capId == captainID){
+							teamID = teamTable[i].id;
 						}
 					}
-				};
-				updateParticipants(0);
+
+					var emails = document.getElementsByClassName("teammember-email");
+					console.log(emails);
+					for (var i = 0; i < participantTable.length; i++) {
+
+						if (participantTable[i].id == captainID){
+							participantTable[i].type = 2;
+							participantTable[i].teamId = teamID;
+						} else {
+							for(var j = 0; j < emails.length; j++) {
+
+								console.log(i);
+								console.log(j);
+								console.log(emails[j].value);
+								console.log(participantTable[i].email);
+
+								if(emails[j].value == participantTable[i].email) {
+									console.log("Same!");
+									participantTable[i].teamId = teamID;
+								}
+							}
+						}
+					};
+					console.log(participantTable);
+					updateParticipants(0);
+				});
 			});
 		});
 	});
@@ -163,10 +169,14 @@ window.onload = function () {
 
 function updateParticipants(i){
 
+	var currentID;
+
 	if (participantTable[i] != null){
+		currentID = participantTable[i].id;
+		console.log(currentID);
 		$.ajax ({
 			type : 'PUT',
-			url : 'http://131.104.49.63/api/participants/',
+			url : 'http://131.104.49.63/api/participants/' + currentID,
 			data : participantTable[i],
 			dataType : 'json',
 			error : function(a, b, c){
@@ -174,6 +184,10 @@ function updateParticipants(i){
 			  	console.log(a);
 			  	console.log(b);
 			  	console.log(c);
+		  	},
+		  	success : function(a){
+	  			console.log("Success");
+	  			console.log(a);
 		  	},
 		  	xhrFields: {
 				withCredentials: true

@@ -29,7 +29,7 @@
 		<div id="header">
 			<div class="row">
 				<div class="col-md-2" style="text-align:center">
-					<a href="Index.html"><img src="img/logo.png" height="70%" width="70%"></a>
+					<a href="index.html"><img src="img/logo.png" height="70%" width="70%"></a>
 				</div>
 				<div class="col-md-6">
 					<h1> Administrator Portal </h1>
@@ -87,10 +87,15 @@
 		</div>
 		<div class="row">
 			<div class="col-md-1"></div>
-			<div class="col-md-6">
+			<div class="col-md-6" id="TeamList">
+				<div class="row" id="NoTeamsAvailableMessage">
+					<div class="col-md-12">
+						<p class="bg-info teams">No Teams Available...</p>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<p class="bg-info teams" id="TeamOne">Food Fighters</p>
+						<p class="bg-info teams" id="TeamOne"><button class="btn btn-warning delete-team">Delete?</button>Food Fighters</p>
 					</div>
 				</div>
 				<div class="row">
